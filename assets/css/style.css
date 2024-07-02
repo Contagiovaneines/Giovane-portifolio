@@ -1,15 +1,5 @@
-/* Definição de variáveis de cores */
-:root {
-    --bg-color: #000000;
-    --second-bg-color: #161616;
-    --text-color: #fff;
-    --main-color: #f8d300;
-}
-
-/* Import da fonte */
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
-/* Reset de estilos e configurações gerais */
 * {
     margin: 0;
     padding: 0;
@@ -18,23 +8,27 @@
     border: none;
     outline: none;
     scroll-behavior: smooth;
+    font-family: 'Poppins', sans-serif;
 }
 
-/* Configuração geral para o HTML */
+:root {
+    --bg-color: #000000;
+    --second-bg-color: #161616;
+    --text-color: #fff;
+    --main-color: #f8d300;
+}
+
 html {
     font-size: 65.5%;
     overflow-x: hidden;
-    font-family: 'Poppins', sans-serif; /* Aplicação da fonte após importação */
 }
 
-/* Estilos para o corpo da página */
 body {
     background: var(--bg-color);
+    font-family: "Poppins", sans-serif;
     color: var(--text-color);
-    font-family: "Poppins", sans-serif; /* Aplicação da fonte após importação */
 }
 
-/* Estilização da barra de rolagem do navegador */
 html::-webkit-scrollbar {
     width: 0.8rem;
 }
@@ -44,10 +38,9 @@ html::-webkit-scrollbar-track {
 }
 
 html::-webkit-scrollbar-thumb {
-    background: var(--main-color);
+    background: var(--main-color)
 }
 
-/* Estilos para o cabeçalho */
 .header {
     position: fixed;
     top: 0;
@@ -105,12 +98,10 @@ html::-webkit-scrollbar-thumb {
 }
 
 @media (max-width: 995px) {
-    /* Estilos para o ícone de menu em telas menores */
     #menu-icon {
         display: block;
     }
 
-    /* Estilos para o menu de navegação em telas menores */
     .navbar {
         position: absolute;
         top: 0;
@@ -177,7 +168,6 @@ span {
 }
 
 .home-img img {
-    position: relative;
     width: 32vw;
     border-radius: 50%;
     box-shadow: 0 0 25px var(--main-color);
@@ -239,9 +229,9 @@ span {
 }
 
 .typing-text {
-    font-size: 34px;
+    font-size: 4rem;
     font-weight: 600;
-    min-width: 280px;
+    text-align: center;
 }
 
 .typing-text span {
@@ -261,7 +251,7 @@ span {
     width: calc(100% + 8px);
     height: 100%;
     border-left: 3px solid var(--bg-color);
-    right: -8;
+    right: -8px;
     animation: cursor 0.6s infinite, typing 20s steps(14) infinite;
 }
 
@@ -273,13 +263,13 @@ span {
 
 @keyframes words {
     0%, 20% {
-        content: 'Tecnico DS';
+        content: 'Técnico de DS';
     }
     21%, 40% {
-        content: 'Devops';
+        content: 'DevOps';
     }
     41%, 60% {
-        content: 'Editor de video';
+        content: 'Editor de vídeo';
     }
     61%, 80% {
         content: 'Cristão';
@@ -298,24 +288,13 @@ span {
     }
 }
 
-/* Animação de piscar */
-@keyframes blink-animation {
-    0%, 100% {
-        opacity: 1;
-    }
-    50% {
-        opacity: 0;
-    }
-}
-
-/* Estilos para as faixas "Site em Construção" no modo desktop */
 .construction-top,
 .construction-bottom {
     background-color: var(--second-bg-color);
     color: var(--main-color);
     text-align: center;
     padding: 1rem 0;
-    position: relative; /* Adicionado para posicionamento relativo */
+    position: relative;
 }
 
 .construction-content {
@@ -327,84 +306,90 @@ span {
     font-size: 2rem;
     font-weight: bold;
     margin: 0;
-    animation: blink-animation 1s infinite; /* Faz o texto piscar */
-    text-shadow: 2px 2px 2px black; /* Adiciona sombra ao texto */
+    animation: blink-animation 1s infinite;
+    text-shadow: 2px 2px 2px black;
 }
 
-/* Fita zebrada */
 .construction-top::before,
 .construction-bottom::before {
     content: "";
     position: absolute;
-    top: 50%; /* Posiciona a fita na metade da seção */
+    top: 50%;
     transform: translateY(-50%);
     left: 0;
     width: 100%;
-    height: 12px; /* Altura da faixa zebrada aumentada */
-    background-size: 30px 100%; /* Tamanho das listras aumentado */
+    height: 12px;
+    background-size: 30px 100%;
 }
 
 .construction-bottom::before {
-    bottom: 50%; /* Posiciona a fita na metade da seção */
+    bottom: 50%;
     transform: translateY(50%);
 }
 
 @media (max-width: 995px) {
-    /* Ajustes específicos para telas menores */
     .home {
         flex-direction: column;
         margin: 5rem 4rem;
     }
+
     .home .home-content h3 {
         font-size: 2.5rem;
     }
+
     .home-content h1 {
         font-size: 5rem;
     }
+
     .home-img img {
         width: 70vw;
         margin-top: 4rem;
     }
 
-    /* Estilos para as faixas "Site em Construção" */
-    .construction-top,
-    .construction-bottom {
-        background-color: var(--second-bg-color);
-        color: var(--main-color);
-        text-align: center;
-        padding: 1rem 0;
-        position: relative; /* Adicionado para posicionamento relativo */
+    #menu-icon {
+        display: block;
     }
 
-    .construction-content {
-        max-width: 90%; /* Alterado para ocupar até 90% da largura */
-        margin: 0 auto;
-    }
-
-    .construction-content h2 {
-        font-size: 1.8rem; /* Reduz o tamanho do título para telas menores */
-        font-weight: bold;
-        margin: 0;
-        animation: blink-animation 1s infinite; /* Faz o texto piscar */
-        text-shadow: 2px 2px 2px black; /* Adiciona sombra ao texto */
-    }
-
-    /* Fita zebrada */
-    .construction-top::before,
-    .construction-bottom::before {
-        content: "";
+    .navbar {
         position: absolute;
-        top: 50%; /* Posiciona a fita na metade da seção */
-        transform: translateY(-50%);
-        left: 0;
-        width: 100%;
-        height: 8px; /* Altura da faixa zebrada reduzida */
-        background: linear-gradient(to right, var(--main-color) 50%, transparent 50%);
-        background-size: 20px 100%; /* Tamanho das listras reduzido */
+        top: 0;
+        right: 0;
+        width: 40%;
+        border-left: 3px solid var(--main-color);
+        border-bottom: 3px solid var(--main-color);
+        border-bottom-left-radius: 2rem;
+        padding: 1rem 3%;
+        background-color: var(--second-bg-color);
+        display: none;
+        flex-direction: column;
+        align-items: flex-start;
     }
 
-    .construction-bottom::before {
-        bottom: 50%; /* Posiciona a fita na metade da seção */
-        transform: translateY(50%);
+    .navbar.active {
+        display: flex;
+    }
+
+    .navbar a {
+        display: block;
+        font-size: 2rem;
+        margin: 3rem 0;
+    }
+
+    .navbar a:hover,
+    .navbar a.active {
+        padding: 1rem;
+        border-radius: 0.5rem;
+    }
+}
+
+@keyframes blink-animation {
+    0% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
     }
 }
