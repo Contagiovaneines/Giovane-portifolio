@@ -1,5 +1,7 @@
+/* Import da fonte */
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
+/* Reset de estilos e configurações gerais */
 * {
     margin: 0;
     padding: 0;
@@ -11,6 +13,7 @@
     font-family: 'Poppins', sans-serif;
 }
 
+/* Definição de variáveis de cores */
 :root {
     --bg-color: #000000;
     --second-bg-color: #161616;
@@ -18,17 +21,20 @@
     --main-color: #f8d300;
 }
 
+/* Configuração geral para o HTML */
 html {
     font-size: 65.5%;
     overflow-x: hidden;
 }
 
+/* Estilos para o corpo da página */
 body {
     background: var(--bg-color);
     font-family: "Poppins", sans-serif;
     color: var(--text-color);
 }
 
+/* Estilização da barra de rolagem do navegador */
 html::-webkit-scrollbar {
     width: 0.8rem;
 }
@@ -38,9 +44,10 @@ html::-webkit-scrollbar-track {
 }
 
 html::-webkit-scrollbar-thumb {
-    background: var(--main-color)
+    background: var(--main-color);
 }
 
+/* Estilos para o cabeçalho */
 .header {
     position: fixed;
     top: 0;
@@ -98,10 +105,12 @@ html::-webkit-scrollbar-thumb {
 }
 
 @media (max-width: 995px) {
+    /* Estilos para o ícone de menu em telas menores */
     #menu-icon {
         display: block;
     }
 
+    /* Estilos para o menu de navegação em telas menores */
     .navbar {
         position: absolute;
         top: 0;
@@ -134,17 +143,19 @@ html::-webkit-scrollbar-thumb {
     }
 }
 
+/* Estilos para as seções da página */
 section {
-    min-height: 1vh;
-    padding: 5rem 9% 5rem;
+    min-height: 100vh; /* Altura mínima ajustada para ocupar toda a tela */
+    padding: 5rem 9% 5rem; /* Ajuste de espaçamento interno */
 }
 
+/* Estilos para a seção inicial "Home" */
 .home {
     display: flex;
     justify-content: center;
     align-items: center;
     gap: 8rem;
-    background: var(--bg-color)
+    background: var(--bg-color);
 }
 
 .home .home-content h1 {
@@ -153,18 +164,10 @@ section {
     line-height: 1.3;
 }
 
-span {
-    color: var(--main-color);
-}
-
 .home-content h3 {
     font-size: 4rem;
     margin-bottom: 1rem;
     font-weight: 700;
-}
-
-.home-img {
-    border-radius: 50%;
 }
 
 .home-img img {
@@ -229,10 +232,11 @@ span {
     transform: scale(1.05);
 }
 
+/* Animação de digitação */
 .typing-text {
-    font-size: 34px;
+    font-size: 4rem; /* Tamanho ajustado para telas menores */
     font-weight: 600;
-    min-width: 280px;
+    text-align: center;
 }
 
 .typing-text span {
@@ -240,7 +244,7 @@ span {
 }
 
 .typing-text span::before {
-    content: 'Devops';
+    content: 'Devops'; /* Texto inicial ajustado para ser visível em telas menores */
     color: var(--main-color);
     animation: words 20s infinite;
 }
@@ -252,7 +256,7 @@ span {
     width: calc(100% + 8px);
     height: 100%;
     border-left: 3px solid var(--bg-color);
-    right: -8;
+    right: -8px;
     animation: cursor 0.6s infinite, typing 20s steps(14) infinite;
 }
 
@@ -264,13 +268,13 @@ span {
 
 @keyframes words {
     0%, 20% {
-        content: 'Tecnico DS';
+        content: 'Técnico de DS';
     }
     21%, 40% {
-        content: 'Devops';
+        content: 'DevOps';
     }
     41%, 60% {
-        content: 'Editor de video';
+        content: 'Editor de vídeo';
     }
     61%, 80% {
         content: 'Cristão';
@@ -289,74 +293,15 @@ span {
     }
 }
 
-@media (max-width: 995px) {
-    .home {
-        flex-direction: column;
-        margin: 5rem 4rem;
+/* Animação de piscar */
+@keyframes blink-animation {
+    0%, 100% {
+        opacity: 1;
     }
-    .home .home-content h3 {
-        font-size: 2.5rem;
-    }
-    .home-content h1 {
-        font-size: 5rem;
-    }
-    .home-img img {
-        width: 70vw;
-        margin-top: 4rem;
+    50% {
+        opacity: 0;
     }
 }
-
-/* Estilos para as faixas "Site em Construção" */
-/* Restante do seu CSS existente ... */
-
-/* Estilos para as faixas "Site em Construção" */
-.construction-top,
-.construction-bottom {
-    background-color: var(--second-bg-color);
-    color: var(--main-color);
-    text-align: center;
-    padding: 1rem 0;
-    position: relative; /* Adicionado para posicionamento relativo */
-}
-
-.construction-content {
-    max-width: 1200px;
-    margin: 0 auto;
-}
-
-.construction-content h2 {
-    font-size: 2rem;
-    font-weight: bold;
-    margin: 0;
-    animation: blink-animation 1s infinite; /* Faz o texto piscar */
-}
-
-/* Fita zebrada */
-/* Restante do seu CSS existente ... */
-
-/* Estilos para as faixas "Site em Construção" */
-.construction-top,
-.construction-bottom {
-    background-color: var(--second-bg-color);
-    color: var(--main-color);
-    text-align: center;
-    padding: 1rem 0;
-    position: relative; /* Adicionado para posicionamento relativo */
-}
-
-.construction-content {
-    max-width: 1200px;
-    margin: 0 auto;
-}
-
-.construction-content h2 {
-    font-size: 2rem;
-    font-weight: bold;
-    margin: 0;
-    animation: blink-animation 1s infinite; /* Faz o texto piscar */
-}
-
-/* Restante do seu CSS existente ... */
 
 /* Estilos para as faixas "Site em Construção" */
 .construction-top,
@@ -391,6 +336,7 @@ span {
     left: 0;
     width: 100%;
     height: 12px; /* Altura da faixa zebrada aumentada */
+    background: linear-gradient(to right, var(--main-color) 50%, transparent 50%);
     background-size: 30px 100%; /* Tamanho das listras aumentado */
 }
 
@@ -400,6 +346,7 @@ span {
 }
 
 @media (max-width: 995px) {
+    /* Estilos ajustados para telas menores */
     .home {
         flex-direction: column;
         margin: 5rem 4rem;
@@ -413,15 +360,5 @@ span {
     .home-img img {
         width: 70vw;
         margin-top: 4rem;
-    }
-}
-
-/* Animação de piscar */
-@keyframes blink-animation {
-    0%, 100% {
-        opacity: 1;
-    }
-    50% {
-        opacity: 0;
     }
 }
